@@ -1,12 +1,18 @@
 package rafael.multiecrasnav.intro.travel4all;
 
 import android.app.FragmentTransaction;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -76,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         android.support.v4.app.FragmentManager manager1 = getSupportFragmentManager();
         manager1.beginTransaction().replace(R.id.fragment_container, firstFragment, firstFragment.getTag()).commit();
 
+        BottomNavigationViewHelper.removeShiftMode(navigation);
     }
 
 

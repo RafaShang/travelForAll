@@ -9,10 +9,10 @@
     </style>
 
     <style name="BottomNavigation">
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@color/bottomPrimary</item>
         <item name="android:itemBackground">@drawable/button_nav</item>
-        <item name="itemIconTint">@color/colorMenu</item>
-        <item name="itemTextColor">@color/colorMenu</item>
+        <item name="itemIconTint">@color/bottomIcons</item>
+        <item name="itemTextColor">@color/bottomText</item>
     </style>
 
 </resources>

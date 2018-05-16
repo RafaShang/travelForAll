@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_search"
         android:icon="@drawable/ic_search"
-        android:title="@string/title_search"/>
+        android:title="@string/title_search"
+        app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_history"
-        android:title="@string/title_history" />
+        android:title="@string/title_history"
+        app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/navigation_map"
         android:icon="@drawable/ic_map"
-        android:title="@string/title_map" />
+        android:title="@string/title_map"
+        app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/navigation_menu"
