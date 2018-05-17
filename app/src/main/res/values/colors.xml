@@ -4,10 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#118186</color>
     <color name="colorMenu">#000000</color>
-    <color name="colorBlueApp">#118186</color>
 
     <color name="bottomPrimary">#F6131313</color>
     <color name="bottomText">#f1f1f1</color>
     <color name="bottomIcons">#f1f1f1</color>
+    <color name="colorBlueApp">#118186</color>
+    <color name="greyLine">#161616</color>
 
 </resources>
