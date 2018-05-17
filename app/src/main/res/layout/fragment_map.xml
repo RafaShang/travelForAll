@@ -2,14 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rafael.multiecrasnav.intro.travel4all.MapFragment"
-    android:background="@android:color/holo_green_dark">
+    android:orientation="vertical"
+    tools:context="rafael.multiecrasnav.intro.travel4all.MapFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_map"
-        android:textSize="30sp"/>
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/colorMenu">
+
+
+        <TableRow>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_search"
+                android:background="@null"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/colorBlueApp"
+                android:text="TRAVEL4ALL"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:src="@drawable/ic_star_border_black_24dp"
+                android:background="@null"/>
+
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

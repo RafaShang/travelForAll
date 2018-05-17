@@ -24,6 +24,7 @@ public class StationFragment extends Fragment {
 
 
     private Button btnUrl;
+    private Button btnSearch;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +41,17 @@ public class StationFragment extends Fragment {
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://www.cp.pt/StaticFiles/Passageiros/horarios/horarios/PDF/r_ir_uc/porto_valenca.pdf"));
                 startActivity(intent);
+            }
+        });
+
+        btnSearch = (Button) view.findViewById(R.id.buttonSearch);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment resultFragment = new ResultFragment();
+                FragmentTransaction transaction4=getFragmentManager().beginTransaction();
+                transaction4.replace(R.id.fragment_container,resultFragment);
+                transaction4.commit();
             }
         });
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+
     tools:context="rafael.multiecrasnav.intro.travel4all.StationFragment">
 
 
@@ -14,6 +14,7 @@
         android:baselineAligned="false"
         android:fadingEdge="none"
         android:orientation="vertical"
+        android:padding="16dp"
         android:visibility="visible">
 
         <LinearLayout
@@ -39,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="22sp"
+                    android:textColor="@color/colorMenu"
                     android:text="CP Viana do Castelo" />
 
 
@@ -47,6 +49,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="16dp"
+                    android:textColor="#f1f1f1"
+                    android:background="@drawable/first_buttons"
                     android:text="Ver Horários" />
 
 
@@ -100,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
-                android:text="IDA" />
+                android:text="Ida" />
 
 
             <RadioButton
@@ -109,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
-                android:text="IDA &amp; VOLTA" />
+                android:text="Ida &amp; Volta" />
 
 
         </LinearLayout>
@@ -120,20 +125,53 @@
             android:layout_marginTop="6dp"
             android:background="@color/colorMenu"/>
 
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_marginTop="50dp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Para onde?" />
+            android:layout_marginTop="90dp"
+            android:background="@drawable/textview_border">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:text="Procurar" />
+            <EditText
+                android:id="@+id/editText"
+                android:drawableLeft="@drawable/ic_destiny"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:text="Para onde?" />
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="75dp">
+
+                <Button
+                    android:id="@+id/buttonSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Procurar"
+                    android:padding="10dp"
+                    android:textColor="#f1f1f1"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:background="@color/colorBlueApp"
+                    android:layout_marginEnd="2dp"/>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
 
     </LinearLayout>
