@@ -35,9 +35,9 @@
                 android:gravity="center"/>
 
             <ImageButton
+                android:id="@+id/star"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-
                 android:src="@drawable/ic_star_border_black_24dp"
                 android:background="@null"/>
 
@@ -72,8 +72,8 @@
                     android:ems="10"
                     android:drawableLeft="@drawable/ic_start"
                     android:background="@null"
-                    android:inputType="textPersonName"
-                    android:text="Origem" />
+                    android:inputType="textCapSentences"
+                    android:hint="Origem"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -85,70 +85,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textCapSentences"
                     android:background="@null"
                     android:drawableLeft="@drawable/ic_destiny"
-                    android:text="Destino" />
+                    android:hint="Destino" />
 
 
 
         </LinearLayout>
         
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="300dp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <ListView
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_plane"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_train"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_directions_bus_black_24dp"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_plane"/>
-
-
-
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorMenu"/>
-
-
-
-
-
-
-            </LinearLayout>
+            </ListView>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#f1f1f1"
+                android:background="@drawable/first_buttons"
+                android:text="Pontos Turísticos"/>
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
+
 
 
 

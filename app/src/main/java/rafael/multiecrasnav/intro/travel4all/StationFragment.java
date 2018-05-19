@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -25,6 +26,9 @@ public class StationFragment extends Fragment {
 
     private Button btnUrl;
     private Button btnSearch;
+    private EditText txtDestiny;
+
+    public String messageDestiny;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +52,8 @@ public class StationFragment extends Fragment {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Fragment resultFragment = new ResultFragment();
                 FragmentTransaction transaction4=getFragmentManager().beginTransaction();
                 transaction4.replace(R.id.fragment_container,resultFragment);
