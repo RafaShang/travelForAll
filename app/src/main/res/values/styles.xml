@@ -15,4 +15,9 @@
         <item name="itemTextColor">@color/bottomText</item>
     </style>
 
+    <style name="locationSearchBox">
+        <item name="android:background">#BBFFFFFF</item>
+        <item name="android:radius">10dp</item>
+    </style>
+
 </resources>
