@@ -15,7 +15,9 @@ package rafael.multiecrasnav.intro.travel4all;
         import android.widget.ListView;
         import android.widget.TextView;
 
+        import java.util.ArrayList;
         import java.util.List;
+        import java.util.Random;
 
 
 public class ResultFragment extends Fragment {
@@ -27,14 +29,13 @@ public class ResultFragment extends Fragment {
 
     private ImageButton btnSearch;
     private ListView listView;
-    public EditText textOrigin;
+    public EditText textOrigin, textDestiny;
+    private String origem, destino;
+    private ArrayList<String> lista;
 
+    int[] IMAGES = {R.drawable.ic_plane, R.drawable.ic_train, R.drawable.ic_directions_bus_black_24dp};
 
-    int[] IMAGES = {R.drawable.ic_plane, R.drawable.ic_train, R.drawable.ic_directions_bus_black_24dp,
-            R.drawable.ic_destiny, R.drawable.ic_history, R.drawable.ic_keyboard_arrow_right,
-            R.drawable.ic_start};
-
-    String[] PRICE = {"700€ - 1500€", "900€ - 1850€" , "1000€ - 1950€" , "1200€ - 2850€" ,
+    String[] PRICE = {"700€ - 1500€", "900€ -+- 1850€" , "1000€ - 1950€" , "1200€ - 2850€" ,
             "250€ - 350€" , "400€ - 850€", "1223€ - 1950€" , "1330€ - 2850€"};
 
     @Override
@@ -42,6 +43,13 @@ public class ResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_result, container, false);
+        lista = new ArrayList<>();
+        lista = getArguments().getStringArrayList("Lista");
+        textOrigin = (EditText) view.findViewById(R.id.editTextOrigin);
+        textDestiny = (EditText) view.findViewById(R.id.editTextDestiny);
+
+        textOrigin.setText(lista.get(0));
+        textDestiny.setText(lista.get(1));
 
         btnSearch = (ImageButton) view.findViewById(R.id.buttonAlterSearch);
         btnSearch.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +75,8 @@ public class ResultFragment extends Fragment {
     class CustomAdapter extends BaseAdapter{
         @Override
         public int getCount() {
-            return IMAGES.length;
+            Random rand= new Random();
+            return rand.nextInt(10);
         }
 
         @Override
@@ -84,10 +93,18 @@ public class ResultFragment extends Fragment {
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.listobjects, null);
             ImageView imageView1 = (ImageView) view.findViewById(R.id.imageViewPlane);
+            ImageView imageView2 = (ImageView) view.findViewById(R.id.imageViewBus);
+            ImageView imageView3 = (ImageView) view.findViewById(R.id.imageViewPlane2);
+            ImageView imageView4 = (ImageView) view.findViewById(R.id.imageViewTrain);
 
             TextView textPrice = (TextView) view.findViewById(R.id.txtPrice);
-
-            imageView1.setImageResource(IMAGES[i]);
+            Random rand= new Random();
+            int n = rand.nextInt(IMAGES.length);
+            imageView1.setImageResource(IMAGES[n]);
+            n = rand.nextInt(IMAGES.length);
+            imageView2.setImageResource(IMAGES[n]);
+            n = rand.nextInt(IMAGES.length);
+            imageView3.setImageResource(IMAGES[n]);
             textPrice.setText(PRICE[i]);
             return view;
         }

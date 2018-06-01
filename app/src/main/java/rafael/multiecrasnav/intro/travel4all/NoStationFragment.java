@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 
@@ -37,6 +39,8 @@ public class NoStationFragment extends Fragment {
 
     private Button btnSearch;
 
+    private ArrayList<String> lista;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,7 +51,7 @@ public class NoStationFragment extends Fragment {
         txtDestiny = (EditText) view.findViewById(R.id.editTextDestiny);
 
 
-
+        lista = new ArrayList<>();
 
 
         imSwap = (ImageButton) view.findViewById(R.id.btnSwap);
@@ -66,7 +70,7 @@ public class NoStationFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 messageOrigin = txtOrigin.getText().toString();
-                messageDestiny = txtOrigin.getText().toString();
+                messageDestiny = txtDestiny.getText().toString();
                 if(messageOrigin.isEmpty() || messageDestiny.isEmpty()){
 
                     Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "Preencha os campos Origem e Destino",
@@ -80,10 +84,17 @@ public class NoStationFragment extends Fragment {
                     snackbar.show();
 
                 } else{
+
                     Fragment resultFragment = new ResultFragment();
                     FragmentTransaction transaction3=getFragmentManager().beginTransaction();
+                    Bundle args = new Bundle();
+                    lista.add(messageOrigin);
+                    lista.add(messageDestiny);
+                    args.putStringArrayList("Lista",lista);
+                    resultFragment.setArguments(args);
                     transaction3.replace(R.id.fragment_container,resultFragment);
                     transaction3.commit();
+
 
                 }
 
